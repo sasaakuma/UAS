@@ -8,21 +8,20 @@ const cors = require('cors')
 
 app.use(cors())
 // (6) middleware body-parser
-//https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
+// https://stackoverflow.com/questions/24330014/bodyparser-is-deprecated-express-4
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json());
 
 // (7) import routes
-const mcdRoutes = require('./routes/Mcd')
-const locationRoutes = require('./routes/Location')
+const locationRoutes = require('./UAS/routes/location')
+const mcdRoutes = require('./UAS/routes/mcd')
 
 
 // (8) app.use (mendaftarkan middleware baru ke Express)
-app.use('/mcd', mcdRoutes)
 app.use('/location', locationRoutes)
-
+app.use('/mcd', mcdRoutes)
 
 
 // (3) koneksi ke database mongodb

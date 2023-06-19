@@ -2,7 +2,6 @@
 const express = require('express')
 const router = express.Router() 
 const Mcd = require('../models/Mcd')
-const verifyToken = require('../config/verifyToken')
 
 // Create 
 router.post('/', async(req, res) => {

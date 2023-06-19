@@ -8,7 +8,7 @@ const McdSchema = mongoose.Schema({
         required: true
     },
     harga: {
-        type: Int,
+        type: Number,
         required: true
     },
     gambar: {
