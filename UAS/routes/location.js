@@ -51,6 +51,7 @@ router.put('/:locationId', async(req, res) => {
 router.delete('/:locationId', async(req, res) => {
     try {
         const location = await Location.deleteOne({_id: req.params.locationId})
+        res.json(location)
     } catch (error){
         res.json({message: error})
     }

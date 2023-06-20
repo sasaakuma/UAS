@@ -50,6 +50,7 @@ router.put('/:mcdId', async(req, res) => {
 router.delete('/:mcdId', async(req, res) => {
     try {
         const mcd = await Mcd.deleteOne({_id: req.params.mcdId})
+        res.json(mcd)
     } catch (error){
         res.json({message: error})
     }
